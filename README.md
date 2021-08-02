@@ -21,7 +21,7 @@
 To get a local copy up and running follow these simple example steps.
 
 1- clone the repo to your local pc with this link (<https://github.com/AkintoyeOlamide/Bookstore-react>).
-2- cd into the directory using `cd BookStore` command.
+2- cd into the directory using `cd Bookstore-react` command.
 3- run `npm install` to install all of the project's dependencies.
 4- run `npm start` to start the project on your local server.
 5- open the proser and go to this link `http://localhost:3000/`
