@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://reverent-joliot-93b9ef.netlify.app/)
 
 ## Getting Started
 
@@ -32,11 +32,11 @@ To run the tests all you have to do is to run `npm test` after setting up the pr
 
 ### Deployment
 
-This project is deployed to netlify. you can view it using this [link]()
+This project is deployed to netlify. you can view it using this [link](https://reverent-joliot-93b9ef.netlify.app/)
 
 ## Authors
 
-👤 **Author1**
+👤 **Akintoye Olamide**
 
 - GitHub: [@AkintoyeOlamide](https://github.com/AkintoyeOlamide)
 - LinkedIn: [Akintoye Olamide](https://linkedin.com/in/Akintoyeolamide)
