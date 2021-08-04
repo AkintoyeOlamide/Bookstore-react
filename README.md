@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://trusting-hypatia-7b6d75.netlify.app/)
+[Live Demo Link](https://xenodochial-noether-0ba997.netlify.app/)
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ To run the tests all you have to do is to run `npm test` after setting up the pr
 
 ### Deployment
 
-This project is deployed to netlify. you can view it using this [link](https://trusting-hypatia-7b6d75.netlify.app/)
+This project is deployed to netlify. you can view it using this [link](https://xenodochial-noether-0ba997.netlify.app/n)
 
 ## Authors
 
