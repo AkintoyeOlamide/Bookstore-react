@@ -1,10 +1,6 @@
 import { combineReducers } from 'redux';
-import BooksReducer from './books';
-import CategoriesReducer from './categories';
+import bookReducer from './books';
 
-const rootReducer = combineReducers({
-  Books: BooksReducer,
-  Category: CategoriesReducer,
-});
+const reducer = combineReducers({ bookReducer });
 
-export default rootReducer;
+export default reducer;

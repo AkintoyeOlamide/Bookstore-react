@@ -1,8 +1,12 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
-const EDIT_BOOK = 'EDIT_BOOK';
-const UPDATE_PROGRESS = 'UPDATE_PROGRESS';
-const CHANGE_CATEGORY = 'CHANGE_CATEGORY';
-export {
-  ADD_BOOK, REMOVE_BOOK, EDIT_BOOK, UPDATE_PROGRESS, CHANGE_CATEGORY,
-};
+export const CREATE_BOOK = 'CREATE_BOOK';
+export const REMOVE_BOOK = 'REMOVE_BOOK';
+
+export const createBook = book => ({
+  type: CREATE_BOOK,
+  book,
+});
+
+export const removeBook = ID => ({
+  type: REMOVE_BOOK,
+  ID,
+});

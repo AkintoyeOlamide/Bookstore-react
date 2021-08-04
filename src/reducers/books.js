@@ -1,70 +1,37 @@
-import {
-  ADD_BOOK,
-  REMOVE_BOOK,
-  EDIT_BOOK,
-  UPDATE_PROGRESS,
-} from '../actions/index';
+import { REMOVE_BOOK, CREATE_BOOK } from '../actions/index';
 
-const initialState = {
-  [Math.floor(Math.random() * 100000)]: {
-    title: 'How successful people think',
-    author: 'John C Maxwell',
-    pages: 800,
-    pagesread: 67,
-    chapter: 9,
-    chapterName: 'Going for it',
-    category: 'Learning',
+const books = [
+  {
+    ID: 1,
+    title: 'Title 1',
+    category: 'Cat-1',
+
   },
-};
+  {
+    ID: 2,
+    title: 'Title 1',
+    category: 'Cat-1',
 
-const BooksReducer = (state = initialState, action) => {
+  },
+  {
+    ID: 3,
+    title: 'Title 1',
+    category: 'Cat-1',
+
+  },
+];
+
+const bookReducer = (state = books, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return {
-        ...state,
-        [Math.floor(Math.random() * 100000)]: {
-          title: action.payload.title,
-          author: action.payload.author,
-          pages: action.payload.pages,
-          pagesread: action.payload.pagesread,
-          category: action.payload.category,
-          chapter: action.payload.chapter,
-          chapterName: action.payload.chapterName,
-        },
-      };
-
-    case EDIT_BOOK: {
-      const books = state;
-      delete books[action.payload.bookID];
-      return {
-        ...books,
-        [action.payload.bookID]: {
-          ...action.payload.newBook,
-        },
-      };
-    }
-
-    case REMOVE_BOOK: {
-      const books = state;
-      delete books[action.payload];
-      return {
-        ...books,
-      };
-    }
-
-    case UPDATE_PROGRESS: {
-      const books = state;
-      delete books[action.payload];
-      return {
-        ...books,
-        [action.payload.bookID]: {
-          ...action.payload.newBook,
-        },
-      };
-    }
+    case CREATE_BOOK:
+      return [
+        ...state, action.book,
+      ];
+    case REMOVE_BOOK:
+      return state.filter(book => book.ID !== action.ID);
     default:
       return state;
   }
 };
 
-export default BooksReducer;
+export default bookReducer;
