@@ -58,7 +58,12 @@ const BookForm = ({ createBook }) => {
     <form>
       <label htmlFor="bookTitle">
         title
-        <input type="text" name="title" value={bookTitleInput} onChange={e => setBookTitleInput(e.target.value)} />
+        <input
+          type="text"
+          name="title"
+          value={bookTitleInput}
+          onChange={e => setBookTitleInput(e.target.value)}
+        />
       </label>
 
       <select
@@ -66,7 +71,9 @@ const BookForm = ({ createBook }) => {
         onChange={e => setBookCategoryInput(e.target.value)}
       >
         {options.map(option => (
-          <option key={`${option.value}`} value={option.value}>{option.label}</option>
+          <option key={`${option.value}`} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </select>
       <button type="button" className="border-2" onClick={handleAddBook}>

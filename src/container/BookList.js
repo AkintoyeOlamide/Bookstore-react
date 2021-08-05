@@ -1,17 +1,38 @@
-import { CREATE_BOOK, REMOVE_BOOK } from '../action-type';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Book from '../components/Book';
 
-const booksReducer = (state = [], action) => {
-  switch (action.type) {
-    case CREATE_BOOK:
-      return [
-        ...state,
-        action.book,
-      ];
-    case REMOVE_BOOK:
-      return state.filter(book => book.id !== action.book.id);
-    default:
-      return state;
-  }
+const mapDispatchToProps = dispatch => ({
+  removeBook: ID => {
+    dispatch({
+      ID,
+      type: 'REMOVE_BOOK',
+    });
+  },
+});
+
+const mapStateToProp = state => ({ books: state.bookReducer });
+
+const BookList = ({ books, removeBook }) => {
+  const renderBook = book => <Book key={book.ID} book={book} removeBook={removeBook} />;
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>title </th>
+          <th>category</th>
+        </tr>
+      </thead>
+      <tbody>{books.map(renderBook)}</tbody>
+    </table>
+  );
 };
 
-export default booksReducer;
+BookList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default connect(mapStateToProp, mapDispatchToProps)(BookList);
