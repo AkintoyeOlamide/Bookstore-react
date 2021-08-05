@@ -1,21 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Book from '../components/Book';
+/* eslint-disable */
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Book from "../components/Book";
 
-const mapDispatchToProps = dispatch => ({
-  removeBook: ID => {
+const mapDispatchToProps = (dispatch) => ({
+  removeBook: (ID) => {
     dispatch({
       ID,
-      type: 'REMOVE_BOOK',
+      type: "REMOVE_BOOK",
     });
   },
 });
 
-const mapStateToProp = state => ({ books: state.bookReducer });
+const mapStateToProp = (state) => ({ books: state.bookReducer });
 
 const BookList = ({ books, removeBook }) => {
-  const renderBook = book => <Book key={book.ID} book={book} removeBook={removeBook} />;
+  const renderBook = (book) => (
+    <Book key={book.ID} book={book} removeBook={removeBook} />
+  );
 
   return (
     <table>
