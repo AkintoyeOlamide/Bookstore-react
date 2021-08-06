@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
 
-const mapDispatchToProps = dispatch => ({
-  createBook: book => {
-    dispatch(createBook(book));
-  },
-});
+// const mapDispatchToProps = dispatch => ({
+//   createBook: book => {
+//     dispatch(createBook(book));
+//   },
+// });
 
 const BookForm = ({ createBook }) => {
   const [bookTitleInput, setBookTitleInput] = useState('');
