@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -5,12 +6,7 @@ import Book from '../components/Book';
 
 const mapDispatchToProps = dispatch => ({
   removeBook: book => {
-    dispatch({
-      ID: book.ID,
-      type: 'REMOVE_BOOK',
-    });
-  },
-});
+    dispatch(removeBook(book.ID));
 
 const mapStateToProp = state => ({ books: state.bookReducer });
 
