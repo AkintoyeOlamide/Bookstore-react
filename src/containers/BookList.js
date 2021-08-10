@@ -1,25 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import Book from "../components/Book";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Book from '../components/Book';
 
-const mapDispatchToProps = (dispatch) => ({
-  removeBook: (book) => {
+const mapDispatchToProps = dispatch => ({
+  removeBook: book => {
     dispatch({
       ID: book.ID,
-      type: "REMOVE_BOOK",
+      type: 'REMOVE_BOOK',
     });
   },
 });
 
-const mapStateToProp = (state) => ({ books: state.bookReducer });
+const mapStateToProp = state => ({ books: state.bookReducer });
 
 const BookList = ({ books, removeBook }) => {
-  const handleRemoveBook = (ID) => {
+  const handleRemoveBook = ID => {
     removeBook(ID);
   };
 
-  const renderBook = (book) => (
+  const renderBook = book => (
     <Book key={book.ID} book={book} removeBook={handleRemoveBook} />
   );
   return (
