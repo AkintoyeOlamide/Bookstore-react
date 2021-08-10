@@ -1,34 +1,30 @@
-import { REMOVE_BOOK, CREATE_BOOK } from '../actions/index';
+/*eslint-disable*/
+import { REMOVE_BOOK, CREATE_BOOK } from "../actions/index";
 
 const books = [
   {
     ID: 1,
-    title: 'Book1',
-    category: 'Action',
-
+    title: "Fringe",
+    category: "Sci-fi",
   },
   {
     ID: 2,
-    title: 'Book2',
-    category: 'Kids',
-
+    title: "Peaky Blinders",
+    category: "Action",
   },
   {
     ID: 3,
-    title: 'Book3',
-    category: 'Sci-Fi',
-
+    title: "Game of Thrones",
+    category: "History",
   },
 ];
 
 const bookReducer = (state = books, action) => {
   switch (action.type) {
     case CREATE_BOOK:
-      return [
-        ...state, action.book,
-      ];
+      return [...state, action.book];
     case REMOVE_BOOK:
-      return state.filter(book => book.ID !== action.ID);
+      return state.filter((book) => book.ID !== action.ID);
     default:
       return state;
   }
