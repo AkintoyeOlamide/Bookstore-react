@@ -1,11 +1,9 @@
-/*eslint-disable*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 import { removeBook, catFilter } from '../actions/index';
-// import CategoryFilter  from '../components/CategoryFilter';
 
 const mapDispatchToProps = dispatch => ({
   removeBook: book => {
