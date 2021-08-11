@@ -37,16 +37,9 @@ const BookList = ({
   return (
     <div>
       <CategoryFilter catFilter={handleCategoryChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>title </th>
-            <th>category</th>
-          </tr>
-        </thead>
-        <tbody>{filteredBooks.map(renderBook)}</tbody>
-      </table>
+      <div className="books-container">
+        {filteredBooks.map(renderBook)}
+      </div>
     </div>
   );
 };

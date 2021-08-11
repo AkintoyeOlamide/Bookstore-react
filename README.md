@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://condescending-goodall-65054e.netlify.app)
+[Live Demo Link](https://ecstatic-minsky-798a98.netlify.app/)
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ To run the tests all you have to do is to run `npm test` after setting up the pr
 
 ### Deployment
 
-This project is deployed to netlify. you can view it using this [link](https://condescending-goodall-65054e.netlify.app)
+This project is deployed to netlify. you can view it using this [link](https://ecstatic-minsky-798a98.netlify.app/gut )
 
 ## Authors
 

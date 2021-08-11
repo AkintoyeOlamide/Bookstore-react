@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
+import '../stylesheets/bookForm.css';
 
 const mapDispatchToProps = dispatch => ({
   createBook: book => {
@@ -67,33 +68,40 @@ const BookForm = ({ createBook }) => {
   };
 
   return (
-    <form>
-      <label htmlFor="bookTitle">
-        Title
-        <input
-          type="text"
-          name="bookTitleInput"
-          value={state.bookTitleInput}
-          onChange={handleChange}
-          required
-        />
-      </label>
+    <div className="book-form-container">
+      <div className="wrapper inner-wrapper">
+        <h2 className="book-form-heading">Add New Book</h2>
+        <form>
+          <input
+            className="form-control book-title"
+            type="text"
+            name="bookTitleInput"
+            value={state.bookTitleInput}
+            onChange={handleChange}
+            placeholder="Book title"
+            required
+          />
 
-      <select
-        name="bookCategoryInput"
-        value={state.bookCategoryInput}
-        onChange={handleChange}
-        required
-      >
-        <option value="">None</option>
-        {options.map(option => (
-          <option key={`${option.value}`} value={option.value}>{option.label}</option>
-        ))}
-      </select>
-      <button type="button" onClick={handleSubmit}>
-        Create Book
-      </button>
-    </form>
+          <select
+            className="form-control book-category"
+            name="bookCategoryInput"
+            value={state.bookCategoryInput}
+            onChange={handleChange}
+            required
+          >
+            <option value="">category</option>
+            {options.map(option => (
+              <option key={`${option.value}`} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <button className="btn-create" type="button" onClick={handleSubmit}>
+            Create Book
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
