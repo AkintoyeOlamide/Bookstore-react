@@ -1,12 +1,11 @@
-/*eslint-disable*/
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { createBook } from "../actions/index";
-import "../stylesheets/bookForm.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createBook } from '../actions/index';
+import '../stylesheets/bookForm.css';
 
-const mapDispatchToProps = (dispatch) => ({
-  createBook: (book) => {
+const mapDispatchToProps = dispatch => ({
+  createBook: book => {
     dispatch(createBook(book));
   },
 });
@@ -14,43 +13,43 @@ const mapDispatchToProps = (dispatch) => ({
 const BookForm = ({ createBook }) => {
   const options = [
     {
-      label: "Action",
-      value: "Action",
+      label: 'Action',
+      value: 'Action',
     },
     {
-      label: "Biography",
-      value: "Biography",
+      label: 'Biography',
+      value: 'Biography',
     },
     {
-      label: "History",
-      value: "History",
+      label: 'History',
+      value: 'History',
     },
     {
-      label: "Horror",
-      value: "Horror",
+      label: 'Horror',
+      value: 'Horror',
     },
     {
-      label: "Kids",
-      value: "Kids",
+      label: 'Kids',
+      value: 'Kids',
     },
     {
-      label: "Learning",
-      value: "Learning",
+      label: 'Learning',
+      value: 'Learning',
     },
     {
-      label: "Sci-Fi",
-      value: "Sci-Fi",
+      label: 'Sci-Fi',
+      value: 'Sci-Fi',
     },
   ];
 
   const initState = {
-    bookTitleInput: "",
-    bookCategoryInput: "",
+    bookTitleInput: '',
+    bookCategoryInput: '',
   };
 
   const [state, setState] = React.useState(initState);
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { value } = e.target;
     setState({
       ...state,
@@ -91,7 +90,7 @@ const BookForm = ({ createBook }) => {
             required
           >
             <option value="">category</option>
-            {options.map((option) => (
+            {options.map(option => (
               <option key={`${option.value}`} value={option.value}>
                 {option.label}
               </option>
