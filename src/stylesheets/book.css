@@ -1,6 +1,5 @@
 .books-container {
   width: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -8,7 +7,6 @@
 
 .book-container {
   margin-top: 20px;
-  display: flex;
   justify-content: space-between;
   padding: 30px 10px;
   width: 100%;
@@ -22,7 +20,6 @@
 }
 
 .book-wrapper {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -90,7 +87,6 @@
 }
 
 .book-center {
-  display: flex;
   align-items: center;
 }
 
@@ -98,7 +94,6 @@
   border-radius: 50%;
   width: 65px;
   height: 65px;
-  display: flex;
   background: #ddd;
   margin-right: 10px;
   background-image: conic-gradient(#307bbe 0% 64%, #e8e8e8 64% 100%);
@@ -168,4 +163,12 @@
 .update-btn:hover {
   cursor: pointer;
   font-weight: 300;
+}
+
+.books-container,
+.book-container,
+.book-wrapper,
+.book-center,
+.progress-bar {
+  display: flex;
 }
